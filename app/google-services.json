@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1081290949189",
+    "firebase_url": "https://simple-fb-chat-default-rtdb.firebaseio.com",
+    "project_id": "simple-fb-chat",
+    "storage_bucket": "simple-fb-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1081290949189:android:71fa9acdaf7f6c0bea192c",
+        "android_client_info": {
+          "package_name": "com.example.simplefbchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1081290949189-v4liqmkn6c1k6qdasi0l3l3c55vs5q53.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.simplefbchat",
+            "certificate_hash": "eb6dbc3013d7eeb49ff94d7130dc95739ddf60b2"
+          }
+        },
+        {
+          "client_id": "1081290949189-js2rbr38s43gf7v4kbn0v65f8a59lpc9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiVZAqQHBpXX_c6ci4UXChTiKLS4bOMEo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1081290949189-js2rbr38s43gf7v4kbn0v65f8a59lpc9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
