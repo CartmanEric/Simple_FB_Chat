@@ -28,10 +28,8 @@ class AuthenticationFragment : Fragment() {
     ): View {
         binding = FragmentAuthenticationBinding.inflate(layoutInflater, container, false)
         val controller = findNavController()
-
         if (viewModel.checkAuthCondition()) {
             controller.navigate(R.id.chatFragment)
-
         } else {
             launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
                 val task = GoogleSignIn.getSignedInAccountFromIntent(it.data)
@@ -40,15 +38,12 @@ class AuthenticationFragment : Fragment() {
             }
             val signInClient = viewModel.getAuthForIntend(requireActivity())
             launcher.launch(signInClient)
-
         }
-
         binding.enterBt.setOnClickListener {
             if (viewModel.checkAuthCondition()) {
                 controller.navigate(R.id.chatFragment)
             } else {
                 Toast.makeText(requireContext(), "Войдите в аккаунт", Toast.LENGTH_LONG).show()
-
             }
         }
 
@@ -57,3 +52,4 @@ class AuthenticationFragment : Fragment() {
 
 
 }
+

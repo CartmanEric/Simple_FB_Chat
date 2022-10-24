@@ -10,8 +10,8 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 
 class ChatViewModel : ViewModel() {
-    val repo = Db()
-    val authFB = Authentication()
+    private val repo = Db()
+    private val authFB = Authentication()
     val userData: MutableLiveData<List<Users>> by lazy {
         MutableLiveData<List<Users>>()
     }
@@ -19,7 +19,6 @@ class ChatViewModel : ViewModel() {
     fun setText(text: String) {
         repo.sendText(Users(authFB.auth.currentUser?.displayName, text))
     }
-
 
     fun getFBResult() {
         repo.myRef.addValueEventListener(object : ValueEventListener {

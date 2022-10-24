@@ -15,7 +15,6 @@ class ChatFragment : Fragment() {
     private lateinit var binding: FragmentChatBinding
     private val viewModel: ChatViewModel by activityViewModels()
     lateinit var adapter: UserAdapter
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,10 +25,8 @@ class ChatFragment : Fragment() {
         return binding.root
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.sendTextBt.setOnClickListener {
             viewModel.setText(binding.ed.text.toString())
             binding.ed.setText("")
@@ -38,7 +35,6 @@ class ChatFragment : Fragment() {
             adapter.submitList(it)
         }
     }
-
 
     private fun initRV() {
         adapter = UserAdapter()

@@ -8,8 +8,7 @@ import com.example.simplefbchat.repository.firebase.Authentication
 import kotlinx.coroutines.launch
 
 class AuthenticationViewModel : ViewModel() {
-    val fbAuth = Authentication()
-
+    private val fbAuth = Authentication()
     fun toGetAuth(token: String) {
         viewModelScope.launch {
             fbAuth.fireBaseAuth(token)
@@ -22,8 +21,7 @@ class AuthenticationViewModel : ViewModel() {
 
     fun checkAuthCondition(): Boolean {
         val checkAuth = fbAuth.auth.currentUser
-        if (checkAuth != null) return true
-        else return false
+        return checkAuth != null
 
 
     }

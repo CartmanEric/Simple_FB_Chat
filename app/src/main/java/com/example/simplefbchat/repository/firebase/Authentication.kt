@@ -19,14 +19,13 @@ class Authentication() {
             .build()
         return GoogleSignIn.getClient(app, signIn)
     }
-     fun fireBaseAuth(idToken: String) {
+
+    fun fireBaseAuth(idToken: String) {
 
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         auth.signInWithCredential(credential)
 
     }
-
-
 
 
 }
