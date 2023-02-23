@@ -1,7 +1,6 @@
 package com.example.simplefbchat.data
 
 
-import android.app.Application
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -11,10 +10,13 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import javax.inject.Inject
 
-class FirebaseDb(private val application: Application) {
+class FirebaseDb @Inject constructor(
+    private val authentication: Authentication
+) {
 
-    private val authentication = Authentication(application)
+
     private val database = Firebase.database
     private val getAllMessage = MutableLiveData<List<Users>>()
     private val myRef = database.getReference("message")
@@ -26,7 +28,7 @@ class FirebaseDb(private val application: Application) {
     }
 
 
-   fun getAllUserMessage(): LiveData<List<Users>> {
+    fun getAllUserMessage(): LiveData<List<Users>> {
         myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val userList = arrayListOf<Users>()

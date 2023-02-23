@@ -1,8 +1,9 @@
 package com.example.simplefbchat.domain
 
 import android.content.Intent
+import javax.inject.Inject
 
-class GetAuthUseCase(private val repository: FireBaseRepository) {
+class GetAuthUseCase @Inject constructor(private val repository: FireBaseRepository) {
 
     fun getAuthForIntend(): Intent {
         return repository.getAuthForIntend()

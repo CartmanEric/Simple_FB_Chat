@@ -1,19 +1,15 @@
 package com.example.simplefbchat.presentation
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import com.example.simplefbchat.data.FirebaseDb
-import com.example.simplefbchat.data.RepositoryImpl
+import androidx.lifecycle.ViewModel
 import com.example.simplefbchat.domain.GetAllMessagesUseCase
 import com.example.simplefbchat.domain.SendMessageUseCase
+import javax.inject.Inject
 
-class ChatViewModel(application: Application) : AndroidViewModel(application) {
-    private val db = FirebaseDb(application)
-    private val repo = RepositoryImpl(application,db)
-    private val sendMessageUseCase = SendMessageUseCase(repo)
-
-
-    val allUserMessage = GetAllMessagesUseCase(repo).getChatMessages()
+class ChatViewModel @Inject constructor(
+    private val getMessageUseCase: GetAllMessagesUseCase,
+    private val sendMessageUseCase: SendMessageUseCase
+) : ViewModel() {
+    val allUserMessage = getMessageUseCase.getChatMessages()
 
     fun setText(text: String) {
         sendMessageUseCase.sendMessage(text)

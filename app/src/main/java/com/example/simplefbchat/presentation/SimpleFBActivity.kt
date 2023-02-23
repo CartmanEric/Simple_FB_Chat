@@ -1,15 +1,12 @@
 package com.example.simplefbchat.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.simplefbchat.databinding.ActivityMainBinding
+import androidx.appcompat.app.AppCompatActivity
+import com.example.simplefbchat.R
 
 class SimpleFBActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
+        setContentView(R.layout.activity_main)
     }
 }

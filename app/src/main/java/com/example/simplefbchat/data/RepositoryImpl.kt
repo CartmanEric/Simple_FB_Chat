@@ -1,13 +1,16 @@
 package com.example.simplefbchat.data
 
-import android.app.Application
 import android.content.Intent
 import androidx.lifecycle.LiveData
 import com.example.simplefbchat.domain.FireBaseRepository
 import com.example.simplefbchat.domain.model.Users
+import javax.inject.Inject
 
-class RepositoryImpl(private val application: Application, private val fbDB: FirebaseDb):FireBaseRepository {
-    private val auth = Authentication(application)
+class RepositoryImpl @Inject constructor(
+    private val fbDB: FirebaseDb,
+    private val auth: Authentication
+) : FireBaseRepository {
+
     override fun getAuthForIntend(): Intent {
         return auth.getClient().signInIntent
     }
