@@ -1,13 +1,14 @@
-package com.example.simplefbchat.screen
+package com.example.simplefbchat.presentation.screen
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.simplefbchat.adapter.UserAdapter
+import com.example.simplefbchat.presentation.screen.adapter.UserAdapter
 import com.example.simplefbchat.databinding.FragmentChatBinding
 
 
@@ -20,7 +21,6 @@ class ChatFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentChatBinding.inflate(layoutInflater, container, false)
-        viewModel.getFBResult()
         initRV()
         return binding.root
     }
@@ -31,8 +31,9 @@ class ChatFragment : Fragment() {
             viewModel.setText(binding.ed.text.toString())
             binding.ed.setText("")
         }
-        viewModel.userData.observe(viewLifecycleOwner) {
-            adapter.submitList(it)
+
+        viewModel.allUserMessage.observe(viewLifecycleOwner) {
+           adapter.submitList(it)
         }
     }
 

@@ -1,4 +1,4 @@
-package com.example.simplefbchat.model
+package com.example.simplefbchat.domain.model
 
   data class Users(
       val name: String? = null,

@@ -1,4 +1,4 @@
-package com.example.simplefbchat.adapter
+package com.example.simplefbchat.presentation.screen.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.simplefbchat.databinding.UserItemBinding
-import com.example.simplefbchat.model.Users
+import com.example.simplefbchat.domain.model.Users
 
 class UserAdapter : ListAdapter<Users, UserAdapter.ItemHolder>(ItemHolder.ItemComparator()) {
     class ItemHolder(private val binding: UserItemBinding) : RecyclerView.ViewHolder(binding.root) {

@@ -1,10 +1,10 @@
-package com.example.simplefbchat
+package com.example.simplefbchat.presentation.screen
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.simplefbchat.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class SimpleFBActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
