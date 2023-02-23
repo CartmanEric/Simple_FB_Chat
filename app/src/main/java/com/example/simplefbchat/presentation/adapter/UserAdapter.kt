@@ -1,14 +1,13 @@
-package com.example.simplefbchat.adapter
+package com.example.simplefbchat.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.simplefbchat.databinding.UserItemBinding
-import com.example.simplefbchat.model.Users
+import com.example.simplefbchat.domain.model.Users
 
-class UserAdapter : ListAdapter<Users, UserAdapter.ItemHolder>(ItemHolder.ItemComparator()) {
+class UserAdapter : ListAdapter<Users, UserAdapter.ItemHolder>(SimpleFBDiffCallback()) {
     class ItemHolder(private val binding: UserItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(users: Users) = with(binding) {
             message.text = users.message
@@ -24,16 +23,6 @@ class UserAdapter : ListAdapter<Users, UserAdapter.ItemHolder>(ItemHolder.ItemCo
                         false
                     )
                 )
-            }
-        }
-
-        class ItemComparator() : DiffUtil.ItemCallback<Users>() {
-            override fun areItemsTheSame(oldItem: Users, newItem: Users): Boolean {
-                return oldItem == newItem
-            }
-
-            override fun areContentsTheSame(oldItem: Users, newItem: Users): Boolean {
-                return oldItem == newItem
             }
         }
     }
