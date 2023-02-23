@@ -1,4 +1,4 @@
-package com.example.simplefbchat.presentation.screen.adapter
+package com.example.simplefbchat.presentation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

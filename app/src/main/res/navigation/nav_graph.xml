@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/authenticationFragment"
-        android:name="com.example.simplefbchat.presentation.screen.AuthenticationFragment"
+        android:name="com.example.simplefbchat.presentation.AuthenticationFragment"
         android:label="fragment_authentication"
         tools:layout="@layout/fragment_authentication" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/chatFragment"
-        android:name="com.example.simplefbchat.presentation.screen.ChatFragment"
+        android:name="com.example.simplefbchat.presentation.ChatFragment"
         android:label="fragment_chat"
         tools:layout="@layout/fragment_chat" />
 </navigation>

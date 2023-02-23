@@ -1,4 +1,4 @@
-package com.example.simplefbchat.presentation.screen
+package com.example.simplefbchat.presentation
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
